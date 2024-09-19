@@ -14,7 +14,7 @@ const AmazonVal = () => {
         { Header: 'S.No', accessor: 'sno' },
         { Header: 'Campaign Name', accessor: 'campaignName' },
         //status
-        { Header: 'Status (Walmart)', accessor: 'status1' },
+        { Header: 'Status (Amazon)', accessor: 'status1' },
         { Header: 'Status (Anarix)', accessor: 'status2' },
         //imp
         { Header: 'Impressions (Amazon)', accessor: 'impressions1' },
