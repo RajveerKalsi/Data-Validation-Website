@@ -13,6 +13,9 @@ const AmazonVal = () => {
     const [columns] = useState([
         { Header: 'S.No', accessor: 'sno' },
         { Header: 'Campaign Name', accessor: 'campaignName' },
+        //status
+        { Header: 'Status (Walmart)', accessor: 'status1' },
+        { Header: 'Status (Anarix)', accessor: 'status2' },
         //imp
         { Header: 'Impressions (Amazon)', accessor: 'impressions1' },
         { Header: 'Impressions (Anarix)', accessor: 'impressions2' },
@@ -77,6 +80,7 @@ const AmazonVal = () => {
     const compareCSV = (data1, data2) => {
         const mappingFile1 = {
             CampaignName: "Campaigns",
+            Status: "Status",
             Impressions: "Impressions",
             Clicks: "Clicks",
             Spend: "Spend(USD)",
@@ -90,6 +94,7 @@ const AmazonVal = () => {
 
         const mappingFile2 = {
             CampaignName: "Campaign Name",
+            Status: "Status",
             Impressions: "Impressions",
             Clicks: "Clicks",
             Spend: "Ad Spend",
@@ -115,6 +120,8 @@ const AmazonVal = () => {
             const file1Row = file1Map[campaignName];
             const file2Row = data2.find(row => row[mappingFile2.CampaignName] === campaignName);
 
+            const status1 = file1Row ? file1Row[mappingFile1.Status] : "NA";
+            const status2 = file2Row ? file2Row[mappingFile2.Status] : "NA";
             const impressions1 = file1Row ? cleanNumber(file1Row[mappingFile1.Impressions]) : 0;
             const impressions2 = file2Row ? cleanNumber(file2Row[mappingFile2.Impressions]) : 0;
             const clicks1 = file1Row ? cleanNumber(file1Row[mappingFile1.Clicks]) : 0;
@@ -168,6 +175,8 @@ const AmazonVal = () => {
             return {
                 sno: index + 1,
                 campaignName,
+                status1,
+                status2,
                 impressions1,
                 impressions2,
                 impDifference,
