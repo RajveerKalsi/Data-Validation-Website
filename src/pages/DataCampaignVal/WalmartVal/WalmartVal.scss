@@ -1,0 +1,106 @@
+/* src/pages/DataVal/Walmart/Walmart.scss */
+.walmart-comparison {
+    font-family: Calibri, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f7f8fc;
+
+    h1 {
+        font-size: 2.2rem;
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    .file-inputs {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    
+        .file-upload {
+            h3 {
+                font-size: 1.2rem;
+                margin-bottom: 10px;
+            }
+            
+            input {
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+            }
+        }
+    
+        button {
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+    
+            &:hover {
+                background-color: #014995;
+            }
+        }
+    }
+
+    .results {
+        margin-top: 20px;
+        width: 100%;
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+
+            .highlight {
+                background-color: #ffeb3b; /* Yellow highlight */
+                font-weight: bold;
+            }
+
+            th, td {
+                border: 1px solid #ddd;
+                padding: 12px;
+                text-align: center;
+            }
+
+            th {
+                background-color: #007bff;
+                color: white;
+            }
+
+            td {
+                background-color: #f9f9f9;
+            }
+
+            tr:nth-child(even) {
+                background-color: #f2f2f2;
+            }
+
+            tr:hover {
+                background-color: #ddd;
+            }
+        }
+    }
+}
+
+.walmart-comparison .color-box {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    display: inline-block;
+    border: 1px solid #ccc;
+}
+
+.walmart-comparison .color-box.red {
+    background-color: red;
+}
+
+.walmart-comparison .color-box.orange {
+    background-color: orange;
+}
+
+.walmart-comparison .color-box.yellow {
+    background-color: yellow;
+}
